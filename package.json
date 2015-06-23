@@ -1,0 +1,25 @@
+{
+  "name": "tab-emitter",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "author": {
+    "name": "ArtskydJ",
+    "email": "josephdykstra@gmail.com"
+  },
+  "description": "",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArtskydJ/tab-emitter.git"
+  },
+  "scripts": {
+    "test": "browserify test/relay.js | smokestack | browserify test/test.js | tap-closer | smokestack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "after": "^0.8.1",
+    "browserify": "^10.2.4",
+    "smokestack": "^3.3.0",
+    "tape": "^4.0.0"
+  }
+}
