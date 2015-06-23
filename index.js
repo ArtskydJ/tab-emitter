@@ -1,18 +1,15 @@
 var EventEmitter = require('events').EventEmitter
 
 module.exports = function TabEmitter(key) {
-	key = key || 'tab-emitter'
+	key = 'tabemitter' + (key || '')
 	var emitter = new EventEmitter()
 	var originalEmit = emitter.emit
 
-	emitter.emit = function emit(eventName) {
+	emitter.emit = function emit() {
 		var args = [].slice.call(arguments)
-		var result = originalEmit.apply(emitter, args)
-
 		localStorage.setItem(key, JSON.stringify(args))
 		localStorage.removeItem(key)
-
-		return result
+		return originalEmit.apply(emitter, args)
 	}
 
 	window.addEventListener('storage', function (ev) {
