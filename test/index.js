@@ -1,15 +1,12 @@
 var browserify = require('browserify')
 var http = require('http')
-var send = require('send')
 var fs = require('fs')
-var chromeLaunch = require('chrome-launch')
+var spawn  = require('child_process').spawn
+var chrome = require('chrome-location')
 
 var browserifyOpts = {
 	basedir: __dirname,
 	debug: true
-}
-var chromeLaunchOpts = {
-	args: [ '--always-enable-dev-tools' ]
 }
 
 var server = http.createServer(function (req, res) {
@@ -23,24 +20,11 @@ var server = http.createServer(function (req, res) {
 	src.on('error', function (err) {
 		res.end(String(err))
 	})
-
 })
 
 server.listen(1000)
 
-var psRelay = chromeLaunch('http://localhost:1000/relay.html', chromeLaunchOpts)
-var psTest = chromeLaunch('http://localhost:1000/test.html', chromeLaunchOpts)
+var ps1 = spawn(chrome, ['http://localhost:1000/relay.html'])
+var ps2 = spawn(chrome, ['http://localhost:1000/test.html'])
 
-process.once('SIGINT', function () { // ctrl+c
-	console.log('killing')
-	psRelay.kill()
-	psRelay.once('exit', function () {
-		psTest.kill()
-		psTest.once('exit', function () {
-			process.exit()
-		})
-	})
-	process.once('SIGINT', function () {
-		process.exit()
-	})
-})
+setTimeout(process.exit, 12000)

@@ -1,37 +1,52 @@
 var test = require('tape')
 var after = require('after')
 var TabEmitter = require('../index.js')
-document.body.innerHTML = '<h1>test</h1>'
+var domready = require('domready')
 
-test('namespaces work', function (t) {
-	t.plan(1)
-	var emitter1 = TabEmitter('yes')
-	var emitter2 = TabEmitter('no')
+domready(function () {
+	window.addEventListener('storage', function (ev) {
+		console.log('onstorage', ev)
+	})
 
-	emitter1.on('x', t.pass.bind(t))
-	emitter2.on('x', t.fail.bind(t))
+	test('namespaces work', function (t) {
+		t.plan(1)
+		var emitter1 = TabEmitter('yes')
+		var emitter2 = TabEmitter('no')
 
-	emitter1.emit('x', 13)
+		emitter1.on('x', function (a) {
+			t.equal(a, 13)
+			setTimeout(t.end.bind(t), 100)
+		})
+		emitter2.on('x', t.fail.bind(t))
 
-	t.end()
+		emitter1.emit('x', 13)
+	})
+
+	test('relay works', function (t) {
+		t.plan(8)
+		var emitter = TabEmitter('relay')
+		var end = after(2, function () {
+			t.end()
+		})
+
+		function assert(name) {
+			return function (a, b, c, d) {
+				console.log('assert', arguments)
+				t.equal(a, 13, name)
+				t.deepEqual(b, { num: 13 }, name)
+				t.equal(c, undefined, name)
+				t.equal(d, undefined, name)
+				end()
+			}
+		}
+
+		emitter.on('catch', assert('catch'))
+		emitter.on('throw', assert('throw'))
+
+		setTimeout(function () {
+			emitter.emit('throw', 13, { num: 13 })
+		}, 1000)
+	})
 })
 
-test('relay works', function (t) {
-	console.log('#RELAY WORKS')
-	t.plan(6)
-	var emitter = TabEmitter('relay')
-	window.em = emitter
-	var end = after(2, t.end.bind(t))
-
-	function assert(a, b, c) {
-		t.equal(a, 13)
-		t.deepEqual(b, { num: 13 })
-		t.equal(c, undefined)
-		end()
-	}
-
-	emitter.on('rebounce', assert)
-	emitter.on('bounce', assert)
-
-	emitter.emit('bounce', 13, { num: 13 })
-})
+setTimeout(window.close, 10000)

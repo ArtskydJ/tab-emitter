@@ -1,16 +1,16 @@
 var tabEmitter = require('../index.js')
 var emitter = tabEmitter('relay')
-document.body.innerHTML = '<h1>relay</h1>'
+var domready = require('domready')
 
-window.addEventListener('storage', function (ev) {
-	console.log('onstorage', ev)
+domready(function () {
+	window.addEventListener('storage', function (ev) {
+		console.log('onstorage', ev)
+	})
+
+	emitter.on('throw', function () {
+		var args = [].slice.call(arguments)
+		emitter.emit.apply(emitter, ['catch'].concat(args))
+	})
 })
 
-emitter.on('bounce', function () {
-	var args = [].slice.call(arguments)
-	console.log('RELAYING', args)
-	args.unshift('rebounce')
-	emitter.emit.apply(emitter, args)
-})
-
-//setTimeout(window.close, 10000)
+setTimeout(window.close, 10000)
