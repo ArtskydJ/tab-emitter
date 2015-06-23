@@ -1,23 +1,12 @@
-var EventEmitter = require('events').EventEmitter
+var emitter = require('tab-emitter')()
+var inputBox = document.getElementById('input-box')
 
-module.exports = function TabEmitter(key) {
-	key = 'tabemitter' + (key || '')
-	var emitter = new EventEmitter()
-	var originalEmit = emitter.emit
+inputBox.addEventListener('keydown', function (ev) {
+    setTimeout(function () {
+        emitter.emit('color', inputBox.value)
+    }, 0)
+})
 
-	emitter.emit = function emit() {
-		var args = [].slice.call(arguments)
-		localStorage.setItem(key, JSON.stringify(args))
-		localStorage.removeItem(key)
-		return originalEmit.apply(emitter, args)
-	}
-
-	window.addEventListener('storage', function (ev) {
-		if (ev.key === key && ev.newValue) {
-			var args = JSON.parse(ev.newValue)
-			originalEmit.apply(emitter, args)
-		}
-	})
-
-	return emitter
-}
+emitter.on('color', function (color) {
+    document.body.style.backgroundColor = color
+})

@@ -1,26 +1,18 @@
 {
-  "name": "tab-emitter",
-  "version": "1.0.1",
   "main": "./index.js",
   "author": {
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
   },
-  "description": "",
-  "keywords": [],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ArtskydJ/tab-emitter.git"
-  },
   "scripts": {
-    "test": "node test/index.js"
+    "build": "browserify index.js -o bundle.js",
+    "watch": "watchify index.js -d -o bundle.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tab-emitter": "^1.0.1"
+  },
   "devDependencies": {
-    "after": "^0.8.1",
     "browserify": "^10.2.4",
-    "chrome-location": "^1.2.1",
-    "domready": "^1.0.8",
-    "tape": "^4.0.0"
+    "watchify": "^3.0.0"
   }
 }
