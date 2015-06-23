@@ -17,8 +17,10 @@ test('namespaces work', function (t) {
 })
 
 test('relay works', function (t) {
+	console.log('#RELAY WORKS')
 	t.plan(6)
 	var emitter = TabEmitter('relay')
+	window.em = emitter
 	var end = after(2, t.end.bind(t))
 
 	function assert(a, b, c) {
@@ -28,7 +30,7 @@ test('relay works', function (t) {
 		end()
 	}
 
-	emitter.on('rebounce', assert) // THIS DOESNT WORK BECUASE OF SAME-ORIGIN POLICY!!!
+	emitter.on('rebounce', assert)
 	emitter.on('bounce', assert)
 
 	emitter.emit('bounce', 13, { num: 13 })

@@ -2,8 +2,15 @@ var tabEmitter = require('../index.js')
 var emitter = tabEmitter('relay')
 document.body.innerHTML = '<h1>relay</h1>'
 
-emitter.on('bounce', function () {
-	emitter.emit.apply(emitter, 'rebounce', [].slice.call(arguments))
+window.addEventListener('storage', function (ev) {
+	console.log('onstorage', ev)
 })
 
-setTimeout(window.close, 10000)
+emitter.on('bounce', function () {
+	var args = [].slice.call(arguments)
+	console.log('RELAYING', args)
+	args.unshift('rebounce')
+	emitter.emit.apply(emitter, args)
+})
+
+//setTimeout(window.close, 10000)
