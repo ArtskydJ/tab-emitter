@@ -14,17 +14,15 @@ body {
 	text-align: center;
 }
 
-.arial {
+#wrapper {
 	font-family: Arial, Sans-Serif;
 }
 
-#input-container {
-	text-align: center;
-	margin: 25px;
+#wrapper > div {
+	margin: 25px 0px;
 }
 
 #code-container {
 	background-color: #bbb;
 	padding: 10px;
-	margin: 25px 0px;
 }

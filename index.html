@@ -7,10 +7,30 @@
 	</head>
 	<body>
 		<div class="full-center">
-			<div class="arial">
+			<div id="wrapper">
 				<div id="input-container">
-					<p>Open this in another tab, and type a color:</p>
-					<input id="input-box" value="#f90"></input>
+					<h1 class="text-center">tab-emitter</h1>
+					<p>
+						<code>tab-emitter</code> is a client-side javascript module that allows<br>
+						you to send events between browser tabs/windows. The<br>
+						sending/recieving web pages must have the
+						<a href="https://en.wikipedia.org/wiki/Same-origin_policy">same origin</a>.<br>
+					</p>
+					<p>
+						<code>tab-emitter</code> is written to work with
+						<a href="https://github.com/substack/node-browserify">browserify</a>, and is<br>
+						extremely easy to implement. Give it a shot, or if you're not<br>
+						convinced, play with this demo!
+					</p>
+					<p>
+						Open this site in multiple tabs/windows. Try placing the<br>
+						windows beside each other.
+					</p>
+					<p class="text-center">
+						Then, type a color:
+					<br>
+						<input id="input-box" value="#f90"></input>
+					</p>
 				</div>
 				<div id="code-container">
 					<code id="code-box"></code>
