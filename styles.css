@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+	height: 100vh;
+}
+
+.full-center {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.arial {
+	font-family: Arial, Sans-Serif;
+}
+
+#input-container {
+	text-align: center;
+	margin: 25px;
+}
+
+#code-container {
+	background-color: #bbb;
+	padding: 10px;
+	margin: 25px 0px;
+}
