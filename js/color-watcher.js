@@ -1,15 +1,15 @@
 var emitter = require('tab-emitter')()
 var inputBox = document.getElementById('input-box')
 
-emitter.on('color', function (clr) {
-	document.body.style.backgroundColor = clr
-})
-
-function emitColor() {
-	if (inputBox.value) {
-		emitter.emit('color', inputBox.value)
-	}
+function setColor(clr) {
+	inputBox.value = clr
+	if (clr) document.body.style.backgroundColor = clr
 }
-emitColor()
-inputBox.addEventListener('change', emitColor)
-inputBox.addEventListener('keyup', emitColor)
+setColor('green')
+emitter.on('color', setColor)
+
+inputBox.addEventListener('keydown', function () {
+	setTimeout(function () {
+		emitter.emit('color', inputBox.value)
+	}, 0)
+})
