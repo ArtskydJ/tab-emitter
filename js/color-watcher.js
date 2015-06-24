@@ -2,7 +2,7 @@ var emitter = require('tab-emitter')()
 var inputBox = document.getElementById('input-box')
 
 function setColor(clr) {
-	inputBox.value = clr
+	if (inputBox.value !== clr) inputBox.value = clr
 	if (clr) document.body.style.backgroundColor = clr
 }
 setColor('green')
