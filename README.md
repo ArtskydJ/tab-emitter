@@ -46,7 +46,7 @@ var TabEmitter = require('tab-emitter')
 
 With [npm](http://nodejs.org/download) do:
 
-	npm install debouncer
+	npm install tab-emitter
 
 # license
 
