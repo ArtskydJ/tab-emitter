@@ -13,7 +13,7 @@
     "url": "https://github.com/ArtskydJ/tab-emitter.git"
   },
   "scripts": {
-    "test": "node test/index.js"
+    "test": "browserify test/test.js -o test/test-bundle.js && browserify test/relay.js -o test/relay-bundle.js && cat test/index.js | smokestack"
   },
   "dependencies": {},
   "devDependencies": {
