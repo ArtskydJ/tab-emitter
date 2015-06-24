@@ -5,6 +5,10 @@
 
 An event emitter for same-origin tab communication
 
+# [demo][demo]
+
+[![demo site](https://cloud.githubusercontent.com/assets/1833684/8331880/45850520-1a50-11e5-94ac-7ef3397a61d2.png)][demo]
+
 # example
 
 *client1.js*
@@ -40,7 +44,7 @@ var TabEmitter = require('tab-emitter')
 ## `var emitter = TabEmitter([key])`
 
 - `key` is a key to uniquely identify an emitter across tabs. If the same key is used in multiple tabs, they can communicate with each other.
-- **Returns** `emitter` which is an instance of an [`EventEmitter`](https://nodejs.org/api/events.html#events_class_events_eventemitter).
+- **Returns** `emitter` which is an [`EventEmitter`](https://nodejs.org/api/events.html#events_class_events_eventemitter) instance.
 
 # install
 
@@ -51,3 +55,5 @@ With [npm](http://nodejs.org/download) do:
 # license
 
 [VOL](http://veryopenlicense.com)
+
+[demo]: http://artskydj.github.io/tab-emitter/
