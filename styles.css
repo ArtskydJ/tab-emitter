@@ -1,21 +1,12 @@
-body {
-	margin: 0;
-	height: 100vh;
-}
-
-.full-center {
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .text-center {
 	text-align: center;
 }
 
 #wrapper {
+	width: 500px;
 	font-family: Arial, Sans-Serif;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #wrapper > div {

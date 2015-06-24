@@ -6,40 +6,34 @@
 		<link href="./styles.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<div class="full-center">
-			<div id="wrapper">
-				<div id="input-container">
-					<h1 class="text-center">tab-emitter</h1>
-					<p>
-						<code>tab-emitter</code> is a client-side javascript module that allows<br>
-						you to send events between browser tabs/windows. The<br>
-						sending/recieving web pages must have the
-						<a href="https://en.wikipedia.org/wiki/Same-origin_policy">same origin</a>.<br>
-					</p>
-					<p>
-						<code>tab-emitter</code> is written to work with
-						<a href="https://github.com/substack/node-browserify">browserify</a>, and is<br>
-						extremely easy to implement. Give it a shot, or if you're not<br>
-						convinced, play with this demo!
-					</p>
-					<p>
-						Open this site in multiple tabs/windows. Try placing the<br>
-						windows beside each other.
-					</p>
-					<p class="text-center">
-						Then, type a color:
-					<br>
-						<input id="input-box" value="#f90"></input>
-					</p>
-				</div>
-				<div id="code-container">
-					<code id="code-box"></code>
-				</div>
-				<div class="text-center">
-					<a href="https://github.com/ArtskydJ/tab-emitter">View on Github</a> &#8212;
-					<a href="https://github.com/ArtskydJ/tab-emitter">Demo Source</a> &#8212;
-					<a href="http://josephdykstra.com">Joseph Dykstra</a>
-				</div>
+		<div id="wrapper">
+			<div id="input-container">
+				<h1 class="text-center">tab-emitter</h1>
+				<p>
+					<code>tab-emitter</code> is a client-side javascript module that allows you to send events
+					between browser tabs/windows. The sending/recieving web pages must have the
+					<a href="https://en.wikipedia.org/wiki/Same-origin_policy">same origin</a>.
+				</p>
+				<p>
+					<code>tab-emitter</code> is written to work with
+					<a href="https://github.com/substack/node-browserify">browserify</a>, and is extremely easy to
+					implement in your code. Give it a shot, or if you're not convinced, play with this demo!
+				</p>
+				<p>
+					Open this site in multiple tabs/windows. Try placing the windows beside each other.
+				</p>
+				<p class="text-center">
+					Then, type a color:<br>
+					<input id="input-box"></input>
+				</p>
+			</div>
+			<div id="code-container">
+				<code id="code-box"></code>
+			</div>
+			<div class="text-center">
+				<a href="https://github.com/ArtskydJ/tab-emitter">View on Github</a> &#8212;
+				<a href="https://github.com/ArtskydJ/tab-emitter">Demo Source</a> &#8212;
+				<a href="http://josephdykstra.com">Joseph Dykstra</a>
 			</div>
 		</div>
 		<script src="./bundle.js"></script>
