@@ -1,9 +1,14 @@
 # tab-emitter
 
+An event emitter for same-origin tab communication
+
 [![Dependency Status](https://david-dm.org/artskydj/tab-emitter.svg)](https://david-dm.org/artskydj/tab-emitter)
 [![devDependency Status](https://david-dm.org/artskydj/tab-emitter/dev-status.svg)](https://david-dm.org/artskydj/tab-emitter#info=devDependencies)
 
-An event emitter for same-origin tab communication
+`tab-emitter` is a client-side javascript module that allows you to send events between browser tabs/windows.
+The sending/recieving web pages must have the [same origin](https://en.wikipedia.org/wiki/Same-origin_policy).
+
+`tab-emitter` is written to work with [browserify](https://github.com/substack/node-browserify), and is extremely easy to implement in your code.
 
 # [demo][demo]
 
