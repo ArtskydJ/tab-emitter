@@ -6,21 +6,20 @@
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
   },
-  "description": "",
+  "description": "An event emitter for same-origin tab communication",
   "keywords": [],
   "repository": {
     "type": "git",
     "url": "https://github.com/ArtskydJ/tab-emitter.git"
   },
   "scripts": {
-    "test": "browserify test/test.js -o test/test-bundle.js && browserify test/relay.js -o test/relay-bundle.js && cat test/index.js | smokestack"
+    "test": "node test/server.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "after": "^0.8.1",
     "browserify": "^10.2.4",
     "chrome-location": "^1.2.1",
-    "domready": "^1.0.8",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "tape-results": "0.0.1"
   }
 }
