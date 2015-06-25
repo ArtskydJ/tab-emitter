@@ -1,9 +1,8 @@
 var test = require('tape')
-var shoe = require('shoe')
+var results = require('tape-results')
 var TabEmitter = require('../index.js')
 
-var stream = shoe('/tap-stream')
-test.createStream().pipe(stream)
+results(test)
 
 test('namespaces work', function (t) {
 	t.plan(1)
@@ -44,9 +43,4 @@ test('relay works', function (t) {
 		t.equal(called, 2, 'assert was called 2x')
 		t.end()
 	}, 2000)
-})
-
-test('end', function (t) {
-	setTimeout(window.close.bind(window), 10)
-	t.end()
 })
