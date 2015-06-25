@@ -56,18 +56,6 @@ var TabEmitter = require('tab-emitter')
 With [npm](http://nodejs.org/download) do:
 
 	npm install tab-emitter
-	
-# tests
-
-Right now, the tests are a little more awkward than I'd like...
-
-To run the tests, follow these steps:
-
-	npm test
-	
-Two chrome tabs should open. Open the dev tools in the tab named "test", and ensure that all the tests passed.
-
-I am working on automating this, so you don't have to check the dev tools.
 
 # license
 
