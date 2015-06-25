@@ -19,6 +19,7 @@
   "devDependencies": {
     "browserify": "^10.2.4",
     "chrome-location": "^1.2.1",
+    "firefox-location": "^1.0.1",
     "tape": "^4.0.0",
     "tape-results": "0.0.1"
   }

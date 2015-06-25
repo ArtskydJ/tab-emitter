@@ -1,7 +1,7 @@
 var browserify = require('browserify')
 var fs = require('fs')
 var spawn  = require('child_process').spawn
-var chrome = require('chrome-location')
+var browser = require('chrome-location') || require('firefox-location')
 var path = require('path')
 var url = require('url')
 var results = require('tape-results')
@@ -47,4 +47,4 @@ function onRequest(req, res) {
 }
 
 
-var chromeWindow = spawn(chrome, ['http://localhost:' + port + '/index.html'])
+var chromeWindow = spawn(browser, ['http://localhost:' + port + '/index.html'])

@@ -2,6 +2,7 @@
 
 An event emitter for same-origin tab communication
 
+[![Build Status](https://travis-ci.org/ArtskydJ/tab-emitter.svg?branch=master)](https://travis-ci.org/ArtskydJ/tab-emitter)
 [![Dependency Status](https://david-dm.org/artskydj/tab-emitter.svg)](https://david-dm.org/artskydj/tab-emitter)
 [![devDependency Status](https://david-dm.org/artskydj/tab-emitter/dev-status.svg)](https://david-dm.org/artskydj/tab-emitter#info=devDependencies)
 
