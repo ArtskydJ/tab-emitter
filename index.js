@@ -1,7 +1,13 @@
 var EventEmitter = require('events').EventEmitter
+var emitters = {}
 
 module.exports = function TabEmitter(key) {
 	key = 'tabemitter' + (key || '')
+	if (!emitters[key]) emitters[key] = makeEmitter(key)
+	return emitters[key]
+}
+
+function makeEmitter(key) {
 	var emitter = new EventEmitter()
 	var originalEmit = emitter.emit
 

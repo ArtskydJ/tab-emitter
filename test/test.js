@@ -5,17 +5,17 @@ var TabEmitter = require('../index.js')
 results(test)
 
 test('namespaces work', function (t) {
-	t.plan(1)
+	t.plan(2)
 	var emitter1 = TabEmitter('yes')
 	var emitter2 = TabEmitter('no')
+	var emitter3 = TabEmitter('yes')
 
-	emitter1.on('x', function (a) {
-		t.equal(a, 13)
-		setTimeout(t.end.bind(t), 100)
-	})
+	emitter1.on('x', function (a) { t.equal(a, 13) })
 	emitter2.on('x', t.fail.bind(t))
+	emitter3.on('x', function (a) { t.equal(a, 13) })
 
 	emitter1.emit('x', 13)
+	setTimeout(t.end.bind(t), 100)
 })
 
 test('relay works', function (t) {
