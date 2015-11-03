@@ -1,19 +1,19 @@
 {
-  "main": "./index.js",
+  "private": true,
   "author": {
     "name": "ArtskydJ",
     "email": "josephdykstra@gmail.com"
   },
   "scripts": {
-    "build": "browserify js/index.js -t brfs -o bundle.js",
-    "watch": "watchify js/index.js -t brfs -d -o bundle.js"
+    "build": "browserify src/index.js | uglifyjs - -m -o bundle.js && node src/build.js",
+    "watch": "watchify src/index.js -d -o bundle.js"
   },
   "dependencies": {
     "tab-emitter": "^1.0.1"
   },
   "devDependencies": {
-    "brfs": "^1.4.0",
     "browserify": "^10.2.4",
+    "uglify-js": "^2.5.0",
     "watchify": "^3.0.0"
   }
 }

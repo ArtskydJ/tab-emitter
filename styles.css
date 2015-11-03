@@ -13,7 +13,9 @@
 	margin: 25px 0px;
 }
 
+pre { margin: 0; }
+
 #code-container {
 	background-color: #bbb;
-	padding: 10px;
+	padding: 5px 10px;
 }
