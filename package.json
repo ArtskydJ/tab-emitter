@@ -1,6 +1,6 @@
 {
   "name": "tab-emitter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./index.js",
   "author": {
     "name": "ArtskydJ",
@@ -8,9 +8,25 @@
   },
   "description": "An event emitter for same-origin tab communication",
   "keywords": [
-    "crosstab", "cross tab", "bazaar", "intercom", "broadcast", "ipc", "rpc",
-    "pubsub", "publish", "subscribe", "hub", "messages", "window", "emitter",
-    "browser", "browserify", "communicate", "communication", "iwc"
+    "crosstab",
+    "cross tab",
+    "bazaar",
+    "intercom",
+    "broadcast",
+    "ipc",
+    "rpc",
+    "pubsub",
+    "publish",
+    "subscribe",
+    "hub",
+    "messages",
+    "window",
+    "emitter",
+    "browser",
+    "browserify",
+    "communicate",
+    "communication",
+    "iwc"
   ],
   "repository": {
     "type": "git",
