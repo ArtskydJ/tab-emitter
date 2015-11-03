@@ -13,7 +13,7 @@ The sending/recieving web pages must have the [same origin](https://en.wikipedia
 
 # [demo][demo]
 
-[![demo site](https://cloud.githubusercontent.com/assets/1833684/8331880/45850520-1a50-11e5-94ac-7ef3397a61d2.png)][demo]
+[![demo site](https://cloud.githubusercontent.com/assets/1833684/10901712/1558f50c-81b9-11e5-8289-6bf496f9edd0.PNG)][demo]
 
 # example
 
