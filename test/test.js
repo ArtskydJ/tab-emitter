@@ -1,8 +1,5 @@
 var test = require('tape')
-var results = require('tape-results')
 var TabEmitter = require('../index.js')
-
-results(test)
 
 test('namespaces work', function (t) {
 	t.plan(2)
@@ -43,4 +40,8 @@ test('relay works', function (t) {
 		t.equal(called, 2, 'assert was called 2x')
 		t.end()
 	}, 2000)
+})
+
+test(function () {
+	require('http').get(test.getHarness()._results.pass ? '/pass' : '/fail')
 })

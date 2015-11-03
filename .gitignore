@@ -1,2 +1,4 @@
 node_modules/*
 npm-debug.log
+test/serve/relay-bundle.js
+test/serve/test-bundle.js

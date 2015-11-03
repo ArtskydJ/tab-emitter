@@ -33,14 +33,13 @@
     "url": "https://github.com/ArtskydJ/tab-emitter.git"
   },
   "scripts": {
-    "test": "node test/server.js"
+    "test": "browserify test/relay.js -o test/serve/relay-bundle.js && browserify test/test.js -o test/serve/test-bundle.js && node test/server.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^10.2.4",
-    "chrome-location": "^1.2.1",
-    "firefox-location": "^1.0.1",
-    "tape": "^4.0.0",
-    "tape-results": "0.0.1"
+    "browserify": "^12.0.1",
+    "ecstatic": "^1.1.3",
+    "opener": "^1.4.1",
+    "tape": "^4.2.2"
   }
 }
