@@ -3,12 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Tab Emitter Demo</title>
-		<link href="./styles.css" rel="stylesheet" type="text/css">
+		<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="./favicon.ico" rel="icon" type="image/ico">
+		<style>
+			.text-center {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="wrapper">
-			<div id="input-container">
+		<div class="container">
+			<div><!-- id="input-container"> -->
 				<h1 class="text-center">tab-emitter</h1>
 				<p>
 					<code>tab-emitter</code> is a client-side javascript module that allows you to send events
@@ -25,26 +30,26 @@
 				</p>
 				<p class="text-center">
 					Then, type a color:<br>
-					<input id="input-box"></input>
+					<input></input>
 				</p>
 			</div>
-			<div id="code-container">
+			<div><!-- id="code-container" -->
 				<pre><code>var emitter = require('tab-emitter')()
-var inputBox = document.getElementById('input-box')
+var input = document.querySelector('input')
 
-function setColor(clr) {
-    if (inputBox.value !== clr) inputBox.value = clr
-    if (clr) document.body.style.backgroundColor = clr
+function setColor(color) {
+    if (input.value !== color) input.value = color
+    if (color) document.body.style.backgroundColor = color
 }
-setColor('green')
+setColor('white')
 emitter.on('color', setColor)
 
-inputBox.addEventListener('keydown', function () {
+input.addEventListener('keydown', function () {
     setTimeout(function () {
-        emitter.emit('color', inputBox.value)
+        emitter.emit('color', input.value)
     }, 0)
 })
-</pre></code>
+</code></pre>
 			</div>
 			<div class="text-center">
 				<a href="https://github.com/ArtskydJ/tab-emitter">View on Github</a> &#8212;
