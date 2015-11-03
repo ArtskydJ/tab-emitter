@@ -7,7 +7,11 @@
     "email": "josephdykstra@gmail.com"
   },
   "description": "An event emitter for same-origin tab communication",
-  "keywords": [],
+  "keywords": [
+    "crosstab", "cross tab", "bazaar", "intercom", "broadcast", "ipc", "rpc",
+    "pubsub", "publish", "subscribe", "hub", "messages", "window", "emitter",
+    "browser", "browserify", "communicate", "communication", "iwc"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ArtskydJ/tab-emitter.git"
