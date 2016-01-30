@@ -5,15 +5,10 @@
 		<title>Tab Emitter Demo</title>
 		<link href="./bootstrap.min.css" rel="stylesheet" type="text/css">
 		<link href="./favicon.ico" rel="icon" type="image/ico">
-		<style>
-			.text-center {
-				text-align: center;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container">
-			<div><!-- id="input-container"> -->
+			<div>
 				<h1 class="text-center">tab-emitter</h1>
 				<p>
 					<code>tab-emitter</code> is a client-side javascript module that allows you to send events
@@ -30,10 +25,10 @@
 				</p>
 				<p class="text-center">
 					Then, type a color:<br>
-					<input></input>
+					<input class="form-control" style="display: inline; width: 130px;">
 				</p>
 			</div>
-			<div><!-- id="code-container" -->
+			<div>
 				<pre><code>var emitter = require('tab-emitter')()
 var input = document.querySelector('input')
 
