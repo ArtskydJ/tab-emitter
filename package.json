@@ -5,15 +5,20 @@
     "email": "josephdykstra@gmail.com"
   },
   "scripts": {
-    "build": "browserify src/index.js | uglifyjs - -m -o bundle.js && node src/build.js",
-    "watch": "watchify src/index.js -d -o bundle.js"
+    "build": "npm run build-css && npm run build-html && npm run build-js",
+    "build-css": "uncss http://artskydj.github.io/tab-emitter/ -s http://bootswatch.com/yeti/bootstrap.min.css | cleancss -o bootstrap.min.css",
+    "build-js": "browserify _src.js | uglifyjs - -m -o bundle.js",
+    "build-html": "node _build-html.js",
+    "watch": "watchify _src.js -d -o bundle.js"
   },
   "dependencies": {
     "tab-emitter": "^1.0.1"
   },
   "devDependencies": {
     "browserify": "^12.0.1",
+    "clean-css": "^3.4.9",
     "uglify-js": "^2.5.0",
+    "uncss": "^0.13.0",
     "watchify": "^3.0.0"
   }
 }
