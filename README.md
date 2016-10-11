@@ -6,6 +6,7 @@
 
 `tab-emitter` is a client-side javascript module that allows you to send events between browser tabs/windows.
 The sending/recieving web pages must have the [same origin](https://en.wikipedia.org/wiki/Same-origin_policy).
+You can not emit events between browsers, only between the same browser.
 
 `tab-emitter` is written to work with [browserify](https://github.com/substack/node-browserify), and is extremely easy to implement in your code.
 
@@ -37,6 +38,34 @@ var emitter = TabEmitter()
 emitter.on('hello', function (obj) {
 	console.log(obj.thing) // => 'world'
 })
+```
+
+# don't use browserify?
+
+If you just want to use this module in the browser without dealing with browserify, here's how you can:
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>tab-emitter is cool</title></head>
+<body>
+	<input type="button" value="Say Hello" id="hello-button"/>
+	<script src="https://wzrd.in/standalone/tab-emitter@latest"></script>
+	<script>
+		var messages = [ 'Hello', 'Greetings', 'What\'s up?', 'How\'s it going?', 'Hi', 'Sup Dawg', 'Howdy', 'Yo!', 'What are the hap\'s?', 'Hey!']
+		var emitter = window.tabEmitter()
+		emitter.on('hello', function (message) {
+			var div = document.createElement('div')
+			div.innerHTML = message
+			document.body.appendChild(div)
+		})
+		document.getElementById('hello-button').onclick = function () {
+			var message = messages[Math.floor(Math.random() * messages.length)]
+			emitter.emit('hello', message)
+		}
+	</script>
+</body>
+</html>
 ```
 
 # api
