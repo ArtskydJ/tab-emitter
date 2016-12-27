@@ -68,7 +68,7 @@ var TabEmitter = require('tab-emitter')
 ## `var emitter = TabEmitter([key])`
 
 - `key` is a key to uniquely identify an emitter across tabs. If the same key is used in multiple tabs, they can communicate with each other.
-- **Returns** `emitter` which is an [`EventEmitter`](https://nodejs.org/api/events.html#events_class_events_eventemitter) instance.
+- **Returns** `emitter` which is an [`EventEmitter`](https://nodejs.org/api/events.html#events_class_eventemitter) instance.
 
 # Install
 
