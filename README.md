@@ -72,7 +72,7 @@ var TabEmitter = require('tab-emitter')
 
 # Install
 
-With [npm](http://nodejs.org/download) do:
+With [npm](https://nodejs.org/en/download) do:
 
 	npm install tab-emitter
 
