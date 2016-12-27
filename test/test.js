@@ -1,6 +1,10 @@
 var test = require('tape')
 var TabEmitter = require('../index.js')
 
+var iframe = document.createElement('iframe')
+iframe.srcdoc = '<script src="./relay-bundle.js"></script>'
+document.body.appendChild(iframe)
+
 test('namespaces work', function (t) {
 	t.plan(2)
 	var emitter1 = TabEmitter('yes')
@@ -40,8 +44,4 @@ test('relay works', function (t) {
 		t.equal(called, 2, 'assert was called 2x')
 		t.end()
 	}, 2000)
-})
-
-test(function () {
-	require('http').get(test.getHarness()._results.pass ? '/pass' : '/fail')
 })
