@@ -50,7 +50,7 @@ If you just want to use this module in the browser without dealing with browseri
     var emitter = window.tabEmitter()
     
     emitter.on('event', function () {
-        console.log('event just happened'))
+        console.log('event just happened')
     })
     
     setTimeout(function () {
