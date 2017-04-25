@@ -1,7 +1,6 @@
-var tabEmitter = require('../index.js')
-var emitter = tabEmitter('relay')
+var TabEmitter = require('../index.js')
+var emitter = TabEmitter('relay')
 
-emitter.on('throw', function () {
-	var args = [].slice.call(arguments)
-	emitter.emit.apply(emitter, ['catch'].concat(args))
+emitter.on('one', function (a) {
+	emitter.emit('two', { num: a })
 })
