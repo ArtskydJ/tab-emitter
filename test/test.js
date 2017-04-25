@@ -1,10 +1,6 @@
 var test = require('tape')
 var TabEmitter = require('../index.js')
 
-// var iframe = document.createElement('iframe')
-// iframe.src = ''
-// document.body.appendChild(iframe)
-
 test('namespaces work', function (t) {
 	t.plan(2)
 	var emitter1 = TabEmitter('yes')
