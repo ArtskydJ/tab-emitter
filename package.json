@@ -14,7 +14,9 @@
     "intercom",
     "broadcast",
     "ipc",
+    "iwc",
     "rpc",
+    "xpc",
     "pubsub",
     "publish",
     "subscribe",
@@ -25,8 +27,7 @@
     "browser",
     "browserify",
     "communicate",
-    "communication",
-    "iwc"
+    "communication"
   ],
   "repository": {
     "type": "git",
