@@ -101,5 +101,5 @@ With [npm](https://nodejs.org/en/download) do:
 
 [MIT](http://choosealicense.com/licenses/mit/)
 
-[demo]: http://artskydj.github.io/tab-emitter/
+[demo]: https://artskydj.github.io/tab-emitter/
 [ee]: https://nodejs.org/docs/latest-v10.x/api/events.html
