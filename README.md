@@ -2,7 +2,7 @@
 
 > Emit events between browser tabs! (Same-origin only.)
 
-[![Build Status](https://travis-ci.org/ArtskydJ/tab-emitter.svg?branch=master)](https://travis-ci.org/ArtskydJ/tab-emitter)
+[![Build Status](https://travis-ci.org/ArtskydJ/tab-emitter.svg?branch=master&cachebuster=20200622)](https://travis-ci.org/ArtskydJ/tab-emitter)
 
 `tab-emitter` is a client-side javascript module that allows you to send events between browser tabs/windows.
 The sending/recieving web pages must have the [same origin](https://en.wikipedia.org/wiki/Same-origin_policy).
